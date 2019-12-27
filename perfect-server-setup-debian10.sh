@@ -165,9 +165,6 @@ mailman   unix  -       n       n       -       -       pipe
 EOF
 
 systemctl restart postfix
-
-ln -s /etc/mailman/apache.conf /etc/apache2/conf-enabled/mailman.conf
-
 systemctl restart apache2
 systemctl restart mailman
 
