@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo "Be sure to edit this script to add your MySQL root password (after -p) to lines 280-282. Also change it on lines 21 and 26.
 echo "Hostname:" $(hostname)
 echo "FQDN:" $(hostname -f)
 echo "You should set your hostname if you haven't done so already."
@@ -277,7 +277,7 @@ EOF
 a2enconf phpmyadmin
 systemctl restart apache2
 
-mysql -u root -p -e "CREATE DATABASE phpmyadmin; 
+mysql -u root -p -e "CREATE DATABASE phpmyadmin;" 
 mysql -u root -p -e "CREATE USER 'pma'@'localhost' IDENTIFIED BY 'O7rDjdz40cBu'; GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'pma'@'localhost' IDENTIFIED BY 'O7rDjdz40cBu' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 mysql -u root -p phpmyadmin < /usr/share/phpmyadmin/sql/create_tables.sql
 
